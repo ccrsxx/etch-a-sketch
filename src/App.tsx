@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Header, Controls, SketchPad, Footer } from './components';
 
 export default function App() {
@@ -7,6 +7,8 @@ export default function App() {
   const [mode, setMode] = useState('color');
   const [isMouseDown, setIsMouseDown] = useState(false);
   const [isClear, setIsClear] = useState(false);
+
+  const sketchKey = useRef(Date.now());
 
   useEffect(() => {
     const handleMouseDown = () => setIsMouseDown(true);
@@ -23,7 +25,10 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    if (isClear) setIsClear(false);
+    if (isClear) {
+      setIsClear(false);
+      sketchKey.current = Date.now();
+    }
   }, [size, isClear]);
 
   const handleSlider = ({
@@ -59,7 +64,7 @@ export default function App() {
           )}, 100%, 50%)`;
           break;
         default:
-          cell.style.backgroundColor = 'white';
+          cell.style.backgroundColor = '#fafafa';
           break;
       }
     };
@@ -87,7 +92,7 @@ export default function App() {
         <SketchPad
           size={size}
           padSize={padSize}
-          isClear={isClear}
+          sketchKey={sketchKey.current}
           handleDraw={handleDraw}
         />
       </main>

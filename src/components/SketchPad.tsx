@@ -3,22 +3,19 @@
 interface SketchPadProps {
   size: number;
   padSize: { gridTemplateColumns: string; gridTemplateRows: string };
-  isClear: boolean;
+  sketchKey: number;
   handleDraw: (click?: boolean) => (e?: React.MouseEvent) => void;
 }
 
 export function SketchPad({
   size,
   padSize,
-  isClear,
+  sketchKey,
   handleDraw
 }: SketchPadProps) {
+  console.log(sketchKey);
   return (
-    <div
-      className='sketchpad'
-      style={padSize}
-      key={isClear ? Date.now() : undefined}
-    >
+    <div className='sketchpad' style={padSize} key={sketchKey}>
       {[...Array(size ** 2)].map((_, i) => (
         <div
           className='cell-pad'
