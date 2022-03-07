@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/etch-a-sketch/static/css/main.38c67994.css",
+    "main.js": "/etch-a-sketch/static/js/main.26db18ea.js",
+    "index.html": "/etch-a-sketch/index.html",
+    "main.38c67994.css.map": "/etch-a-sketch/static/css/main.38c67994.css.map",
+    "main.26db18ea.js.map": "/etch-a-sketch/static/js/main.26db18ea.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.38c67994.css",
+    "static/js/main.26db18ea.js"
+  ]
+}
