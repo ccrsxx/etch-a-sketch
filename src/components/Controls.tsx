@@ -2,6 +2,7 @@ interface ControlProps {
   color: string;
   size: number;
   mode: string;
+  clear: () => void;
   handleMode: (mode: string) => () => void;
   handleSlider: ({
     target: { value }
@@ -15,6 +16,7 @@ export function Controls({
   color,
   size,
   mode,
+  clear,
   handleMode,
   handleSlider,
   handleColor
@@ -48,7 +50,9 @@ export function Controls({
       >
         Eraser
       </button>
-      <button type='button'>Clear</button>
+      <button type='button' onClick={clear}>
+        Clear
+      </button>
       <label htmlFor='size-slider'>{`${size} x ${size}`}</label>
       <input
         id='size-slider'
@@ -56,7 +60,7 @@ export function Controls({
         type='range'
         value={size}
         min={1}
-        max={32}
+        max={64}
         onChange={handleSlider}
       />
     </div>

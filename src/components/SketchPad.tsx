@@ -1,33 +1,39 @@
-import { useState } from 'react';
+// import { memo } from 'react';
 
 interface SketchPadProps {
   size: number;
-  pads: boolean[];
   padSize: { gridTemplateColumns: string; gridTemplateRows: string };
-  handleDraw: (i: number) => (e: any) => void;
+  isClear: boolean;
+  handleDraw: (click?: boolean) => (e?: React.MouseEvent) => void;
 }
 
-interface CellPadProps {
-  cellStatus: boolean;
-  flip: (e: any) => void;
-}
-
-function CellPad({ cellStatus, flip }: CellPadProps) {
+export function SketchPad({
+  size,
+  padSize,
+  isClear,
+  handleDraw
+}: SketchPadProps) {
   return (
     <div
-      className='cell-pad'
-      style={cellStatus ? { backgroundColor: 'black' } : undefined}
-      onClick={flip}
-    />
-  );
-}
-
-export function SketchPad({ size, pads, padSize, handleDraw }: SketchPadProps) {
-  return (
-    <div className='sketchpad' style={padSize}>
+      className='sketchpad'
+      style={padSize}
+      key={isClear ? Date.now() : undefined}
+    >
       {[...Array(size ** 2)].map((_, i) => (
-        <CellPad key={i} cellStatus={pads[i]} flip={handleDraw(i)} />
+        <div
+          className='cell-pad'
+          onClick={handleDraw(true)}
+          onMouseOver={handleDraw(false)}
+          key={i}
+        />
       ))}
     </div>
   );
 }
+
+// export const MemoizedSketchPad = memo(SketchPad, (prevProps, nextProps) => {
+//   const same =
+//     prevProps.size === nextProps.size &&
+//     prevProps.isClear === nextProps.isClear;
+//   return same;
+// });
