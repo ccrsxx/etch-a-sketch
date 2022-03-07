@@ -13,7 +13,6 @@ export function SketchPad({
   sketchKey,
   handleDraw
 }: SketchPadProps) {
-  console.log(sketchKey);
   return (
     <div className='sketchpad' style={padSize} key={sketchKey}>
       {[...Array(size ** 2)].map((_, i) => (
