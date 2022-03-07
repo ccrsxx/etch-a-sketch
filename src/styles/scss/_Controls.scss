@@ -1,0 +1,66 @@
+.controls {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  width: 20rem;
+
+  input,
+  button {
+    appearance: none;
+    cursor: pointer;
+    width: 100%;
+    padding: 1rem 2rem;
+    font-family: inherit;
+    font-size: 1.6rem;
+    border: 1px solid var(--primary-dark);
+    border-radius: 5px;
+    transition: 200ms ease-in-out;
+
+    &:hover {
+      transform: scale(1.05);
+      background-color: lightgray;
+    }
+  }
+
+  input {
+    padding: unset;
+  }
+
+  .color-picker {
+    border: none;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+
+    &::-webkit-color-swatch-wrapper {
+      padding: 0;
+    }
+
+    &::-webkit-color-swatch {
+      border: none;
+      border-radius: 50%;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+  }
+
+  .size-slider {
+    height: 1.4rem;
+    background-color: var(--primary-light);
+
+    &::-webkit-slider-thumb {
+      cursor: e-resize;
+      appearance: none;
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      background-color: var(--primary-dark);
+    }
+  }
+
+  button.active {
+    background-color: var(--primary-dark);
+    color: var(--primary-light);
+  }
+}

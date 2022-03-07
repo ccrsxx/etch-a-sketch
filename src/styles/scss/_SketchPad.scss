@@ -1,0 +1,23 @@
+.sketchpad {
+  width: 50rem;
+  height: 50rem;
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  grid-template-rows: repeat(16, 1fr);
+  background-color: var(--secondary-light);
+  box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.3);
+
+  &:active {
+    cursor: crosshair;
+  }
+
+  .cell-pad {
+    cursor: pointer;
+    border: 1px solid lightgray;
+    transition: 250ms;
+
+    &:hover {
+      border-color: gray;
+    }
+  }
+}

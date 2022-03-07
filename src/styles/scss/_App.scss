@@ -1,11 +1,21 @@
 body {
   font: normal 1.6rem var(--main-font);
   color: var(--primary-dark);
+  background-color: var(--primary-light);
 }
 
 .App {
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
   min-height: 100vh;
+
+  main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10rem;
+  }
 }

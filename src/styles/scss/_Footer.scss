@@ -1,0 +1,19 @@
+.footer {
+  text-align: center;
+  font-size: 2.2rem;
+
+  p {
+    a {
+      text-decoration: none;
+      color: var(--primary-dark);
+      text-decoration: underline transparent;
+      text-underline-position: under;
+      transition: 200ms ease-in-out;
+
+      &:hover {
+        color: lightcoral;
+        text-decoration-color: var(--primary-dark);
+      }
+    }
+  }
+}
