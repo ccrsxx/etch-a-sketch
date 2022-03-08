@@ -31,6 +31,10 @@ export default function App() {
     }
   }, [size, isClear]);
 
+  useEffect(() => {
+    document.documentElement.style.setProperty('--slider-thumb', color);
+  }, [color]);
+
   const handleSlider = ({
     target: { value }
   }: React.ChangeEvent<HTMLInputElement>) => {

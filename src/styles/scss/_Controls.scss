@@ -45,6 +45,11 @@
     }
   }
 
+  label {
+    font-size: 2rem;
+    margin-bottom: -1rem;
+  }
+
   .size-slider {
     height: 1.4rem;
     background-color: var(--primary-light);
@@ -55,7 +60,7 @@
       width: 3rem;
       height: 3rem;
       border-radius: 50%;
-      background-color: var(--primary-dark);
+      background-color: var(--slider-thumb);
     }
   }
 

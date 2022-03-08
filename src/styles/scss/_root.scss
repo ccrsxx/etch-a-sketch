@@ -4,12 +4,16 @@ $primary-light: #ededed;
 $secondary-light: #fafafa;
 $primary-dark: #333;
 
+$slider-thumb: #333;
+
 :root {
   --font-size: #{$font-size};
   --main-font: #{$main-font};
   --primary-light: #{$primary-light};
   --secondary-light: #{$secondary-light};
   --primary-dark: #{$primary-dark};
+
+  --slider-thumb: #{$slider-thumb};
 }
 
 * {
