@@ -49,19 +49,20 @@ export default function App() {
 
   const handleDraw =
     (click = false) =>
-    (e?: React.MouseEvent) => {
+    (e: React.MouseEvent) => {
       if (!isMouseDown && !click) return;
 
-      const cell = e!.target as HTMLDivElement;
+      const cell = e.target as HTMLDivElement;
 
       switch (mode) {
         case 'color':
           cell.style.backgroundColor = color;
           break;
         case 'rainbow':
-          cell.style.backgroundColor = `hsl(${Math.floor(
-            Math.random() * 360
-          )}, 100%, 50%)`;
+          cell.style.backgroundColor = `#${(
+            ((1 << 24) * Math.random()) |
+            0
+          ).toString(16)}`;
           break;
         default:
           cell.style.backgroundColor = '#fafafa';

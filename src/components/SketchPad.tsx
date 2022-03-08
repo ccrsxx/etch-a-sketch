@@ -1,10 +1,8 @@
-// import { memo } from 'react';
-
 interface SketchPadProps {
   size: number;
   padSize: { gridTemplateColumns: string; gridTemplateRows: string };
   sketchKey: number;
-  handleDraw: (click?: boolean) => (e?: React.MouseEvent) => void;
+  handleDraw: (click?: boolean) => (e: React.MouseEvent) => void;
 }
 
 export function SketchPad({
@@ -26,10 +24,3 @@ export function SketchPad({
     </div>
   );
 }
-
-// export const MemoizedSketchPad = memo(SketchPad, (prevProps, nextProps) => {
-//   const same =
-//     prevProps.size === nextProps.size &&
-//     prevProps.isClear === nextProps.isClear;
-//   return same;
-// });

@@ -13,12 +13,8 @@
     height: 40rem;
   }
 
-  &:active {
-    cursor: crosshair;
-  }
-
   .cell-pad {
-    cursor: pointer;
+    cursor: crosshair;
     border: 1px solid lightgray;
     transition: border-color 250ms;
 

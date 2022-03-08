@@ -29,15 +29,16 @@
     "@typescript-eslint/no-use-before-define": "off",
     "@typescript-eslint/no-non-null-assertion": "off",
     "jsx-quotes": ["error", "prefer-single"],
-    "jsx-a11y/click-events-have-key-events": "warn",
-    "jsx-a11y/mouse-events-have-key-events": "warn",
-    "jsx-a11y/no-static-element-interactions": "warn",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/mouse-events-have-key-events": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
     "no-console": "warn",
     "no-plusplus": "warn",
+    "no-bitwise": "off",
     "linebreak-style": "off",
     "no-nested-ternary": "off",
     "react/self-closing-comp": "warn",
-    "react/no-array-index-key": "warn",
+    "react/no-array-index-key": "off",
     "import/prefer-default-export": "off"
   }
 }

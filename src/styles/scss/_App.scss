@@ -11,21 +11,17 @@ body {
   align-items: center;
   min-height: 100vh;
 
-  @media screen and (max-width: 480px) {
-    justify-content: center;
-    gap: 2rem;
-  }
-
   main {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10rem;
+    margin: 5rem 0;
 
-    @media screen and (max-width: 480px) {
+    @media screen and (max-width: 800px) {
       flex-direction: column-reverse;
-      gap: 3rem;
+      gap: 5rem;
     }
   }
 }

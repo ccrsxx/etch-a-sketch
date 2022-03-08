@@ -31,17 +31,18 @@ export function Controls({
       />
       <button
         className={mode === 'color' ? 'active' : undefined}
+        style={mode === 'color' ? { backgroundColor: color } : undefined}
         type='button'
         onClick={handleMode('color')}
       >
-        Color Mode
+        Color
       </button>
       <button
         className={mode === 'rainbow' ? 'active' : undefined}
         type='button'
         onClick={handleMode('rainbow')}
       >
-        Rainbow Mode
+        Rainbow
       </button>
       <button
         className={mode === 'eraser' ? 'active' : undefined}
