@@ -58,28 +58,19 @@ export default function App() {
 
       const cell = e.target as HTMLDivElement;
 
-      switch (mode) {
-        case 'color':
-          cell.style.backgroundColor = color;
-          break;
-        case 'rainbow':
-          cell.style.backgroundColor = `#${(
-            ((1 << 24) * Math.random()) |
-            0
-          ).toString(16)}`;
-          break;
-        default:
-          cell.style.backgroundColor = '#fafafa';
-          break;
+      if (mode === 'color') {
+        cell.style.backgroundColor = color;
+      } else if (mode === 'rainbow') {
+        cell.style.backgroundColor = `#${(
+          ((1 << 24) * Math.random()) |
+          0
+        ).toString(16)}`;
+      } else if (mode === 'eraser') {
+        cell.style.backgroundColor = '#fafafa';
       }
     };
 
   const clear = () => setIsClear(true);
-
-  const padSize = {
-    gridTemplateColumns: `repeat(${size}, 1fr)`,
-    gridTemplateRows: `repeat(${size}, 1fr)`
-  };
 
   return (
     <div className='App'>
@@ -96,7 +87,6 @@ export default function App() {
         />
         <SketchPad
           size={size}
-          padSize={padSize}
           sketchKey={sketchKey.current}
           handleDraw={handleDraw}
         />

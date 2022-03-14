@@ -30,8 +30,8 @@ export function Controls({
         onChange={handleColor}
       />
       <button
-        className={mode === 'color' ? 'active' : undefined}
         style={mode === 'color' ? { backgroundColor: color } : undefined}
+        className={mode === 'color' ? 'active' : undefined}
         type='button'
         onClick={handleMode('color')}
       >
