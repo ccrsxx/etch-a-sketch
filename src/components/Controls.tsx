@@ -2,7 +2,9 @@ interface ControlProps {
   color: string;
   size: number;
   mode: string;
-  clear: () => void;
+  isBordered: boolean;
+  toggleClear: () => void;
+  toggleBorder: () => void;
   handleMode: (mode: string) => () => void;
   handleSlider: ({
     target: { value }
@@ -16,7 +18,9 @@ export function Controls({
   color,
   size,
   mode,
-  clear,
+  isBordered,
+  toggleBorder,
+  toggleClear,
   handleMode,
   handleSlider,
   handleColor
@@ -51,9 +55,23 @@ export function Controls({
       >
         Eraser
       </button>
-      <button type='button' onClick={clear}>
+      <button type='button' onClick={toggleClear}>
         Clear
       </button>
+      <div className='switch-holder'>
+        <div className='switch-label'>
+          <span>Border</span>
+        </div>
+        <div className='switch-toggle'>
+          <input
+            type='checkbox'
+            id='bluetooth'
+            defaultChecked={isBordered}
+            onClick={toggleBorder}
+          />
+          <label htmlFor='bluetooth' />
+        </div>
+      </div>
       <label htmlFor='size-slider'>{`${size} x ${size}`}</label>
       <input
         id='size-slider'

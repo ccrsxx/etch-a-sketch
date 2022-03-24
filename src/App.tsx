@@ -6,6 +6,7 @@ export default function App() {
   const [size, setSize] = useState(16);
   const [mode, setMode] = useState('color');
   const [isMouseDown, setIsMouseDown] = useState(false);
+  const [isBordered, setIsBordered] = useState(true);
   const [isClear, setIsClear] = useState(false);
 
   const sketchKey = useRef(Date.now());
@@ -32,13 +33,18 @@ export default function App() {
   }, [size, isClear]);
 
   useEffect(() => {
+    const border = isBordered ? '1px solid lightgray' : 'none';
+    document.documentElement.style.setProperty('--border', border);
+  }, [isBordered]);
+
+  useEffect(() => {
     document.documentElement.style.setProperty('--slider-thumb', color);
   }, [color]);
 
   const handleSlider = ({
     target: { value }
   }: React.ChangeEvent<HTMLInputElement>) => {
-    clear();
+    toggleClear();
     setSize(+value);
   };
 
@@ -70,7 +76,11 @@ export default function App() {
       }
     };
 
-  const clear = () => setIsClear(true);
+  const toggleClear = () => setIsClear(true);
+
+  const toggleBorder = () => {
+    setIsBordered(!isBordered);
+  };
 
   return (
     <div className='App'>
@@ -80,7 +90,9 @@ export default function App() {
           color={color}
           size={size}
           mode={mode}
-          clear={clear}
+          isBordered={isBordered}
+          toggleClear={toggleClear}
+          toggleBorder={toggleBorder}
           handleMode={handleMode}
           handleSlider={handleSlider}
           handleColor={handleColor}

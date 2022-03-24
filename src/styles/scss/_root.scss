@@ -5,6 +5,7 @@ $secondary-light: #fafafa;
 $primary-dark: #333;
 
 $slider-thumb: #333;
+$border: none;
 
 :root {
   --font-size: #{$font-size};
@@ -14,6 +15,7 @@ $slider-thumb: #333;
   --primary-dark: #{$primary-dark};
 
   --slider-thumb: #{$slider-thumb};
+  --border: #{$border};
 }
 
 * {

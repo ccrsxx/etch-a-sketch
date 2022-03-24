@@ -15,11 +15,10 @@
 
   .cell-pad {
     cursor: crosshair;
-    border: 1px solid lightgray;
-    transition: border-color 250ms;
+    border: var(--border);
 
     &:hover {
-      border-color: gray;
+      border: 1px solid gray;
     }
   }
 }
