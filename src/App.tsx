@@ -57,24 +57,22 @@ export default function App() {
   const handleMode = (newMode: string) => () =>
     mode !== newMode ? setMode(newMode) : undefined;
 
-  const handleDraw =
-    (click = false) =>
-    (e: React.MouseEvent) => {
-      if (!isMouseDown && !click) return;
+  const handleDraw = (click?: boolean) => (e: React.MouseEvent) => {
+    if (!isMouseDown && !click) return;
 
-      const cell = e.target as HTMLDivElement;
+    const cell = e.target as HTMLDivElement;
 
-      if (mode === 'color') {
-        cell.style.backgroundColor = color;
-      } else if (mode === 'rainbow') {
-        cell.style.backgroundColor = `#${(
-          ((1 << 24) * Math.random()) |
-          0
-        ).toString(16)}`;
-      } else if (mode === 'eraser') {
-        cell.style.backgroundColor = '#fafafa';
-      }
-    };
+    if (mode === 'color') {
+      cell.style.backgroundColor = color;
+    } else if (mode === 'rainbow') {
+      cell.style.backgroundColor = `#${(
+        ((1 << 24) * Math.random()) |
+        0
+      ).toString(16)}`;
+    } else if (mode === 'eraser') {
+      cell.style.backgroundColor = '#fafafa';
+    }
+  };
 
   const toggleClear = () => setIsClear(true);
 

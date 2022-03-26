@@ -18,7 +18,7 @@ export function SketchPad({ size, sketchKey, handleDraw }: SketchPadProps) {
         <div
           className='cell-pad'
           onClick={handleDraw(true)}
-          onMouseOver={handleDraw(false)}
+          onMouseOver={handleDraw()}
           key={i}
         />
       ))}
