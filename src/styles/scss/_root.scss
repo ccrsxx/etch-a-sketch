@@ -1,4 +1,3 @@
-$font-size: 10px;
 $main-font: 'Roboto', sans-serif;
 $primary-light: #ededed;
 $secondary-light: #fafafa;
@@ -8,7 +7,6 @@ $slider-thumb: #333;
 $border: none;
 
 :root {
-  --font-size: #{$font-size};
   --main-font: #{$main-font};
   --primary-light: #{$primary-light};
   --secondary-light: #{$secondary-light};
@@ -25,7 +23,7 @@ $border: none;
 }
 
 html {
-  font-size: var(--font-size);
+  font-size: 62.5%;
 
   @media screen and (max-width: 1200px) {
     font-size: 60%;
